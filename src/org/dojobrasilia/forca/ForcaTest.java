@@ -2,10 +2,17 @@ package org.dojobrasilia.forca;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class ForcaTest {
+	private Forca forca;
+
+	@Before
+	public void setup() {
+		forca = new Forca("oi");
+	}
 
 	@Test
 	public void deve_mostrar_as_letras_como_pontos(){
@@ -21,43 +28,37 @@ public class ForcaTest {
 	
 	@Test
 	public void deve_comecar_com_10_chutes(){
-		Forca f = new Forca("oi");
-		assertEquals(10, f.chutes());
+		assertEquals(10, forca.chutes());
 	}
 
 	@Test
 	public void deve_decrementar_os_chutes(){
-		Forca f = new Forca("oi");
-		f.chuta('a');
-		assertEquals(9, f.chutes());
+		forca.chuta('a');
+		assertEquals(9, forca.chutes());
 	}
 
 	@Test
 	public void deve_manter_os_chutes_qndo_acerta(){
-		Forca f = new Forca("oi");
-		f.chuta('o');
-		assertEquals(10, f.chutes());
+		forca.chuta('o');
+		assertEquals(10, forca.chutes());
 	}
 
 	@Test
 	public void deve_manter_o_output_qndo_erra(){
-		Forca f = new Forca("oi");
-		f.chuta('a');
-		assertEquals("..", f.output());
+		forca.chuta('a');
+		assertEquals("..", forca.output());
 	}
 
 	@Test
 	public void deve_mostrar_o_acerto_no_output(){
-		Forca f = new Forca("oi");
-		f.chuta('o');
-		assertEquals("o.", f.output());
+		forca.chuta('o');
+		assertEquals("o.", forca.output());
 	}
 	
 	@Test
 	public void deve_mostrar_o_acerto_no_output_para_segunda_letra(){
-		Forca f = new Forca("oi");
-		f.chuta('i');
-		assertEquals(".i", f.output());
+		forca.chuta('i');
+		assertEquals(".i", forca.output());
 	}
 	
 	@Test
@@ -85,39 +86,34 @@ public class ForcaTest {
 	
 	@Test
 	public void nao_deve_perder_de_cara(){
-		Forca f = new Forca("oi");
-		assertFalse(f.perdeu());
+		assertFalse(forca.perdeu());
 	}
 	
 	@Test
 	public void deve_perder_errando_10_vezes(){
-		Forca f = new Forca("oi");
 		for (int i = 0; i < 10; i++) {
-			f.chuta('z');
+			forca.chuta('z');
 		}
-		assertTrue(f.perdeu());
+		assertTrue(forca.perdeu());
 	}
 	
 	@Test
 	public void nao_deve_perder_errando_9_vezes(){
-		Forca f = new Forca("oi");
 		for (int i = 0; i < 9; i++) {
-			f.chuta('z');
+			forca.chuta('z');
 		}
-		assertFalse(f.perdeu());
+		assertFalse(forca.perdeu());
 	}
 	
 	@Test
 	public void nao_deve_ganhar_de_cara(){
-		Forca f = new Forca("oi");
-		assertFalse(f.ganhou());
+		assertFalse(forca.ganhou());
 	}
 
 	@Test
 	public void deve_ganhar_qndo_acertar_tudo(){
-		Forca f = new Forca("oi");
-		f.chuta('o');
-		f.chuta('i');
-		assertTrue(f.ganhou());
+		forca.chuta('o');
+		forca.chuta('i');
+		assertTrue(forca.ganhou());
 	}
 }

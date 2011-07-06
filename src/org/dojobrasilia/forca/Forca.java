@@ -1,5 +1,8 @@
 package org.dojobrasilia.forca;
 
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
 public class Forca {
 
 	private String palavra;
@@ -25,7 +28,7 @@ public class Forca {
 
 	public void chuta(char c) {
 		if(palavra.contains(""+c)) {
-			int i = palavra.indexOf(c) ; 
+			int i = palavra.indexOf(c);
 			do {
 				output.setCharAt(i, c);
 				i = palavra.indexOf(c, i + 1 );
