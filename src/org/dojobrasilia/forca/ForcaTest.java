@@ -53,4 +53,10 @@ public class ForcaTest {
 		assertEquals("o.", f.output());
 	}
 	
+	@Test
+	public void deve_mostrar_o_acerto_no_output_para_segunda_letra(){
+		Forca f = new Forca("oi");
+		f.chuta('i');
+		assertEquals(".i", f.output());
+	}
 }
