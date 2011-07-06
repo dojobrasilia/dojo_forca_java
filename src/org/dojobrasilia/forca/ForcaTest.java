@@ -59,4 +59,11 @@ public class ForcaTest {
 		f.chuta('i');
 		assertEquals(".i", f.output());
 	}
+	
+	@Test
+	public void deve_mostrar_varios_acertos_no_output(){
+		Forca f = new Forca("asa");
+		f.chuta('a');
+		assertEquals("a.a", f.output());
+	}
 }

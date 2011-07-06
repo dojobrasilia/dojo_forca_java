@@ -25,7 +25,11 @@ public class Forca {
 
 	public void chuta(char c) {
 		if(palavra.contains(""+c)) {
-			output.setCharAt(palavra.indexOf(c), c);
+			int i= palavra.indexOf(c);
+			output.setCharAt(i, c);
+			if (palavra.indexOf(c, i+1) != -1) {
+				output.setCharAt(palavra.indexOf(c, i+1), c);
+			}
 		} else {
 			chutes -= 1;
 		}
