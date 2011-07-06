@@ -19,4 +19,18 @@ public class ForcaTest {
 		assertEquals("....",f.output());
 	}
 	
+	@Test
+	public void deve_comecar_com_10_chutes(){
+		Forca f = new Forca("oi");
+		assertEquals(10, f.chutes());
+	}
+
+	@Test
+	public void deve_decrementar_os_chutes(){
+		Forca f = new Forca("oi");
+		f.chuta('a');
+		assertEquals(9, f.chutes());
+	}
+
+	
 }

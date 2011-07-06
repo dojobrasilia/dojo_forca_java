@@ -3,9 +3,11 @@ package org.dojobrasilia.forca;
 public class Forca {
 
 	private String palavra;
+	private int chutes;
 	
 	public Forca(String palavra) {
 		this.palavra = palavra;
+		this.chutes=10;
 	}
 
 	public String output() {
@@ -14,6 +16,14 @@ public class Forca {
 			sb.append('.');
 		}
 		return sb.toString();
+	}
+
+	public int chutes() {
+		return chutes;
+	}
+
+	public void chuta(char c) {
+		chutes -= 1;
 	}
 
 }
