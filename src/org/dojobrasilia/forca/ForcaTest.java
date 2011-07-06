@@ -67,4 +67,20 @@ public class ForcaTest {
 		assertEquals("a.a", f.output());
 	}
 	
+	@Test
+	public void deve_mostrar_varios_acertos_no_output_para_uma_palavra_grande(){
+		Forca f = new Forca("abracadabra");
+		
+		f.chuta('a');
+		assertEquals("a..a.a.a..a", f.output());
+		
+		f.chuta('r');
+		assertEquals("a.ra.a.a.ra", f.output());
+		assertEquals(10, f.chutes());
+
+		f.chuta('z');
+		assertEquals("a.ra.a.a.ra", f.output());
+		assertEquals(9, f.chutes());
+	}
+	
 }
