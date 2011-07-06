@@ -23,7 +23,9 @@ public class Forca {
 	}
 
 	public void chuta(char c) {
-		chutes -= 1;
+		if(!palavra.contains(""+c)) {
+			chutes -= 1;
+		}
 	}
 
 }

@@ -32,5 +32,11 @@ public class ForcaTest {
 		assertEquals(9, f.chutes());
 	}
 
+	@Test
+	public void deve_manter_os_chutes_qndo_acerta(){
+		Forca f = new Forca("oi");
+		f.chuta('o');
+		assertEquals(10, f.chutes());
+	}
 	
 }
