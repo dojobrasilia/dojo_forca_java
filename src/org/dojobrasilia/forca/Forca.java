@@ -4,11 +4,11 @@ public class Forca {
 
 	private String palavra;
 	
-	public Forca(String string) {
-		palavra = string;
+	public Forca(String palavra) {
+		this.palavra = palavra;
 	}
 
-	public Object output() {
+	public String output() {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < palavra.length(); i++) {
 			sb.append('.');
