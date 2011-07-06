@@ -38,5 +38,19 @@ public class ForcaTest {
 		f.chuta('o');
 		assertEquals(10, f.chutes());
 	}
+
+	@Test
+	public void deve_manter_o_output_qndo_erra(){
+		Forca f = new Forca("oi");
+		f.chuta('a');
+		assertEquals("..", f.output());
+	}
+
+	@Test
+	public void deve_mostrar_o_acerto_no_output(){
+		Forca f = new Forca("oi");
+		f.chuta('o');
+		assertEquals("o.", f.output());
+	}
 	
 }
