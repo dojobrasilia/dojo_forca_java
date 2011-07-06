@@ -84,6 +84,12 @@ public class ForcaTest {
 	}
 	
 	@Test
+	public void nao_deve_perder_de_cara(){
+		Forca f = new Forca("oi");
+		assertFalse(f.perdeu());
+	}
+	
+	@Test
 	public void deve_perder_errando_10_vezes(){
 		Forca f = new Forca("oi");
 		for (int i = 0; i < 10; i++) {
@@ -92,4 +98,26 @@ public class ForcaTest {
 		assertTrue(f.perdeu());
 	}
 	
+	@Test
+	public void nao_deve_perder_errando_9_vezes(){
+		Forca f = new Forca("oi");
+		for (int i = 0; i < 9; i++) {
+			f.chuta('z');
+		}
+		assertFalse(f.perdeu());
+	}
+	
+	@Test
+	public void nao_deve_ganhar_de_cara(){
+		Forca f = new Forca("oi");
+		assertFalse(f.ganhou());
+	}
+
+	@Test
+	public void deve_ganhar_qndo_acertar_tudo(){
+		Forca f = new Forca("oi");
+		f.chuta('o');
+		f.chuta('i');
+		assertTrue(f.ganhou());
+	}
 }

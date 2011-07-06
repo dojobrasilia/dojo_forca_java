@@ -36,7 +36,11 @@ public class Forca {
 	}
 
 	public boolean perdeu() {
-		return true;
+		return chutes <= 0;
+	}
+
+	public boolean ganhou() {
+		return output.toString().equals(palavra);
 	}
 
 }
