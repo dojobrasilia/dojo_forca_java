@@ -27,8 +27,9 @@ public class Forca {
 		if(palavra.contains(""+c)) {
 			int i= palavra.indexOf(c);
 			output.setCharAt(i, c);
-			if (palavra.indexOf(c, i+1) != -1) {
-				output.setCharAt(palavra.indexOf(c, i+1), c);
+			i= palavra.indexOf(c, i + 1);
+			if (i != -1) {
+				output.setCharAt(i, c);
 			}
 		} else {
 			chutes -= 1;

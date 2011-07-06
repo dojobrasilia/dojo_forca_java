@@ -66,4 +66,5 @@ public class ForcaTest {
 		f.chuta('a');
 		assertEquals("a.a", f.output());
 	}
+	
 }
