@@ -35,4 +35,8 @@ public class Forca {
 		}
 	}
 
+	public boolean perdeu() {
+		return true;
+	}
+
 }

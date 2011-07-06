@@ -83,4 +83,13 @@ public class ForcaTest {
 		assertEquals(9, f.chutes());
 	}
 	
+	@Test
+	public void deve_perder_errando_10_vezes(){
+		Forca f = new Forca("oi");
+		for (int i = 0; i < 10; i++) {
+			f.chuta('z');
+		}
+		assertTrue(f.perdeu());
+	}
+	
 }
